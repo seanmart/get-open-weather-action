@@ -29,3 +29,5 @@ async function getWeather(){
   setOutput('DATA', output);
 
 }
+
+getWeather()
