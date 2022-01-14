@@ -8477,7 +8477,7 @@ function fixResponseChunkedTransferBadEnding(request, errorCallback) {
 async function getWeather(){
 
   let api_key = (0,core.getInput)('API_KEY')
-  let coordinates = (0,core.getInput)('COORDINATES')
+  let coordinates = JSON.parse((0,core.getInput)('COORDINATES'))
   let exclude = (0,core.getInput)('EXCLUDE')
   let arr = []
 

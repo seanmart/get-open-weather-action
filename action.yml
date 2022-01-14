@@ -4,7 +4,7 @@ inputs:
     description: should be an openWeather API key
     required: true
   COORDINATES:
-    description: 'should be an object {latitude:x, longitude:x}, can also be an array of these objects. If is an array you can give each object an id for output'
+    description: 'should be an stringifyed json object or array with 3 properties: longitude,latitude,id. id is optional, but useful for arrays'
     required: true
   EXCLUDE:
     description: 'options to exclude are current,minutely,hourly,daily,alerts, should be in comma delimited list'

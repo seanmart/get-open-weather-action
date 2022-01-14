@@ -4,7 +4,7 @@ import fetch from "node-fetch";
 async function getWeather(){
 
   let api_key = getInput('API_KEY')
-  let coordinates = getInput('COORDINATES')
+  let coordinates = JSON.parse(getInput('COORDINATES'))
   let exclude = getInput('EXCLUDE')
   let arr = []
 
