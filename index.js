@@ -25,8 +25,11 @@ async function getWeather(){
       }
     }
   }
+
   let output = arr.length == 1 ? arr[0] : arr
-  setOutput('DATA', output);
+
+  console.log('output',output)
+  setOutput('DATA', JSON.stringify(output));
 
 }
 

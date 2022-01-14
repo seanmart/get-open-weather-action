@@ -8498,8 +8498,11 @@ async function getWeather(){
       }
     }
   }
+
   let output = arr.length == 1 ? arr[0] : arr
-  ;(0,core.setOutput)('DATA', output);
+
+  console.log('output',output)
+  ;(0,core.setOutput)('DATA', JSON.stringify(output));
 
 }
 
