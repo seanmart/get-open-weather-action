@@ -26,7 +26,7 @@ async function getWeather(){
 
   console.log(api_key)
 
-  if (Object.keys(props) > 0 && api_key){
+  if (Object.keys(props) > 0 && !!api_key){
     console.log('entering loop')
     for (let i = 0; i < props.data;i++){
       if (props.validate(props.data[i])){
