@@ -8500,7 +8500,7 @@ async function getWeather(){
   if (Object.keys(props).length > 0 && !!api_key){
     for (let i = 0; i < props.data.length;i++){
       if (props.validate(props.data[i])){
-        let id = props.data.id || i
+        let id = props.data[i].id || i
         let query = props.query(props.data[i])
         let res = await fetch(`https://api.openweathermap.org/data/2.5/weather?q=${query}&appid=${api_key}`)
         if (res.ok) output[id] = await res.json()
