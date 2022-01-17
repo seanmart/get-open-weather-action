@@ -15,10 +15,10 @@ async function getWeather() {
       if (item.longitude && item.latitude) {
         query = `lat=${item.latitude}&lon=${item.longitude}`;
       } else if (item.city && item.state) {
-        query = `${item.city},${item.state}`;
+        query = `q=${item.city},${item.state}`;
       }
       if (query) {
-        let res = await fetch(`https://api.openweathermap.org/data/2.5/weather?q=${query}&appid=${api_key}`);
+        let res = await fetch(`https://api.openweathermap.org/data/2.5/weather?${query}&appid=${api_key}`);
         console.log(res);
         if (res.ok) output[id] = await res.json();
       }
@@ -30,3 +30,5 @@ async function getWeather() {
 }
 
 getWeather();
+
+//https://api.openweathermap.org/data/2.5/weather?q=lat=39.15662157303635&lon=-75.52269646172266&appid=***
