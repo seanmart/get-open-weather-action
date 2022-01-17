@@ -24,9 +24,9 @@ async function getWeather(){
     props.query = (d) => `lat=${d.latitude}&lon=${d.longitude}`
   }
 
-  console.log(Object.keys(props) > 0 && !!api_key)
+  console.log(Object.keys(props).length > 0 && !!api_key)
 
-  if (Object.keys(props) > 0 && !!api_key){
+  if (Object.keys(props).length > 0 && !!api_key){
 
     console.log('entering loop')
 
