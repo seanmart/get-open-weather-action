@@ -10,14 +10,11 @@ async function getWeather(){
   let output = {}
   let props = {}
 
-  console.log(cityState)
-
   if (cityState){
     cityState = JSON.parse(cityState)
     props.data = Array.isArray(cityState) ? cityState : [cityState]
     props.validate = (d)=> !!d.city
     props.query = (d) => c.state ? `${c.city},${c.state}` : `${c.city}`
-    console.log(props)
   }
 
   if (coordinates){
@@ -27,7 +24,10 @@ async function getWeather(){
     props.query = (d) => `lat=${d.latitude}&lon=${d.longitude}`
   }
 
-  if (props && api_key){
+  console.log(api_key)
+
+  if (Object.keys(props) > 0 && api_key){
+    console.log('entering loop')
     for (let i = 0; i < props.data;i++){
       if (props.validate(props.data[i])){
         let id = props.data.id || i
