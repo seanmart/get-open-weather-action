@@ -8480,6 +8480,7 @@ async function getWeather(){
   let coordinates = (0,core.getInput)('COORDINATES')
   let cityState = (0,core.getInput)('CITY_STATE')
   let exclude = (0,core.getInput)('EXCLUDE')
+  let output = {}
   let props = {}
 
   if (cityState){

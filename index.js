@@ -7,6 +7,7 @@ async function getWeather(){
   let coordinates = getInput('COORDINATES')
   let cityState = getInput('CITY_STATE')
   let exclude = getInput('EXCLUDE')
+  let output = {}
   let props = {}
 
   if (cityState){
