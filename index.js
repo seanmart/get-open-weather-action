@@ -24,7 +24,7 @@ async function getWeather(){
   }
 
   if (props && api_key){
-    for (let i = 0; i < props.data){
+    for (let i = 0; i < props.data;i++){
       if (props.validate(props.data[i])){
         let id = props.data.id || i
         let query = props.query(props.data[i])
@@ -37,7 +37,7 @@ async function getWeather(){
 
   console.log('output',output)
   setOutput('DATA', JSON.stringify(output));
-  
+
 
 }
 
