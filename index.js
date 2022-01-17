@@ -10,6 +10,8 @@ async function getWeather(){
   let output = {}
   let props = {}
 
+  console.log(cityState)
+
   if (cityState){
     cityState = JSON.parse(cityState)
     props.data = Array.isArray(cityState) ? cityState : [cityState]
