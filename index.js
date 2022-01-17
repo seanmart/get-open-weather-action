@@ -18,6 +18,7 @@ async function getWeather() {
         query = `${item.city},${item.state}`;
       }
       if (query) {
+        console.log(query);
         let res = await fetch(`https://api.openweathermap.org/data/2.5/weather?q=${query}&appid=${api_key}`);
         if (res.ok) output[id] = await res.json();
       }
