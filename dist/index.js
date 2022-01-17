@@ -8479,7 +8479,6 @@ async function getWeather(){
   let api_key = (0,core.getInput)('API_KEY')
   let coordinates = (0,core.getInput)('COORDINATES')
   let cityState = (0,core.getInput)('CITY_STATE')
-  let exclude = (0,core.getInput)('EXCLUDE')
   let output = {}
   let props = {}
 
@@ -8504,10 +8503,7 @@ async function getWeather(){
 
         let id = props.data.id || i
         let query = props.query(props.data[i])
-        if (exclude) query += `&exclude=${exclude}`
-
-        let res = await fetch(`https://api.openweathermap.org/data/2.5/onecall?${query}&appid=${api_key}`)
-        console.log(res)
+        let res = await fetch(`https://api.openweathermap.org/data/2.5/weather?${query}&appid=${api_key}`)
         if (res.ok) output[id] = await res.json()
       }
     }

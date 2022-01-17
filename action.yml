@@ -11,10 +11,6 @@ inputs:
     description: 'should be an stringifyed json object or array with 3 properties: city,state,id'
     required: false
     default: null
-  EXCLUDE:
-    description: 'options to exclude are current,minutely,hourly,daily,alerts, should be in comma delimited list'
-    required: false
-    default: null
 outputs:
   DATA:
     description: outputs either an array or an object depending on inputs
