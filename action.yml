@@ -3,17 +3,13 @@ inputs:
   API_KEY:
     description: should be an openWeather API key
     required: true
-  COORDINATES:
-    description: 'should be an stringifyed json object or array with 3 properties: longitude,latitude,id'
-    required: false
-    default: null
-  CITY_STATE:
-    description: 'should be an stringifyed json object or array with 3 properties: city,state,id'
+  DATA:
+    description: "should be an stringifyed json object or array with id,longitude,latitude,city,state"
     required: false
     default: null
 outputs:
   DATA:
     description: outputs either an array or an object depending on inputs
 runs:
-  using: 'node16'
+  using: "node16"
   main: dist/index.js
