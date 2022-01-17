@@ -8505,9 +8505,9 @@ async function getWeather(){
         let id = props.data.id || i
         let query = props.query(props.data[i])
         if (exclude) query += `&exclude=${exclude}`
-        console.log(query)
 
         let res = await fetch(`https://api.openweathermap.org/data/2.5/onecall?${query}&appid=${api_key}`)
+        console.log(res)
         if (res.ok) output[id] = await res.json()
       }
     }
