@@ -8497,18 +8497,16 @@ async function getWeather(){
     props.query = (d) => `lat=${d.latitude}&lon=${d.longitude}`
   }
 
-  console.log(Object.keys(props).length > 0 && !!api_key)
 
   if (Object.keys(props).length > 0 && !!api_key){
 
-    console.log('entering loop')
-
     for (let i = 0; i < props.data;i++){
-
+      console.log(props.validate(props.data[i]))
       if (props.validate(props.data[i])){
         let id = props.data.id || i
         let query = props.query(props.data[i])
         if (exclude) query += `&exclude=${exclude}`
+        console.log(query)
 
         let res = await fetch(`https://api.openweathermap.org/data/2.5/onecall?${query}&appid=${api_key}`)
         if (res.ok) output[id] = await res.json()
