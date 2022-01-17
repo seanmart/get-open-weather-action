@@ -8484,6 +8484,7 @@ async function getWeather() {
     data = Array.isArray(data) ? data : [data];
     for (let i = 0; i < data.length; i++) {
       let item = data[i];
+      let id = item.id || i;
       if (item.longitude && item.latitude) {
         query = `lat=${item.latitude}&lon=${item.longitude}`;
       } else if (item.city && item.state) {
