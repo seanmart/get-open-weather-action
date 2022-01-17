@@ -6,9 +6,11 @@ inputs:
   COORDINATES:
     description: 'should be an stringifyed json object or array with 3 properties: longitude,latitude,id'
     required: false
+    default: null
   CITY_STATE:
     description: 'should be an stringifyed json object or array with 3 properties: city,state,id'
     required: false
+    default: null
   EXCLUDE:
     description: 'options to exclude are current,minutely,hourly,daily,alerts, should be in comma delimited list'
     required: false

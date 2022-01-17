@@ -17,6 +17,7 @@ async function getWeather(){
     props.data = Array.isArray(cityState) ? cityState : [cityState]
     props.validate = (d)=> !!d.city
     props.query = (d) => c.state ? `${c.city},${c.state}` : `${c.city}`
+    console.log(props)
   }
 
   if (coordinates){
